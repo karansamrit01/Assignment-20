@@ -5,13 +5,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Roller</title>
+    <style>
+        body {
+            background-image: radial-gradient(circle 437px at -14.6% -4.3%, rgba(17, 148, 138, 1) 3.1%, rgba(78, 206, 187, 1) 48.1%, rgba(149, 252, 239, 1) 100.3%);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .heading {
+            margin-bottom: 20px;
+            color: #002789;
+            text-align: center;
+        }
+
+        .cointainer {
+            background: white;
+            height: 270px;
+            border-radius: 25px;
+            width: fit-content;
+            padding: 35px;
+            margin: 30px auto;
+            border: radius 25px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        .cointainer:hover {
+            transform: translate(-5px);
+        }
+
+        .imgs {
+            height: 200px;
+            align-items: center;
+            width: 200px;
+        }
+
+        .btn {
+            align-items: center;
+            margin: 30px auto;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+            padding: 12px 28px;
+            background-image: radial-gradient(circle farthest-corner at 32.7% 49.8%, rgba(28, 88, 238, 1) 0%, rgba(0, 39, 137, 1) 100.2%);
+            border: none;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 5px 15px rgba(0, 39, 137, 0.5);
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Dice Roller</h1>
-    <div>
+    <h1 class="heading">Dice Roller</h1>
+    <div class="cointainer">
         <img src="one-dice.png" class="imgs" id="dice" />
-        <button class="btn" onclick="roll()">Dice Roll</button>
+        <button class="btn" onclick="roll()"> Roll Dice</button>
     </div>
 
     <script>
@@ -26,17 +87,17 @@
         function roll() {
             const diceFace = diceRollFace();
             if (diceFace == 1) {
-                dice.src = "one-dice.png";
+                diceElement.src = "one-dice.png";
             } else if (diceFace == 2) {
-                dice.src = "two-dice.png";
+                diceElement.src = "two-dice.png";
             } else if (diceFace == 3) {
-                dice.src = "three-dice.png";
+                diceElement.src = "three-dice.png";
             } else if (diceFace == 4) {
-                dice.src = "four-dice.png";
+                diceElement.src = "four-dice.png";
             } else if (diceFace == 5) {
-                dice.src = "five-dice.png";
+                diceElement.src = "five-dice.png";
             } else if (diceFace == 6) {
-                dice.src = "six-dice.png";
+                diceElement.src = "six-dice.png";
             }
         }
     </script>
