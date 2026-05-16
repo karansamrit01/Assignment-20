@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Roller</title>
 </head>
+
 <body>
     <h1>Dice Roller</h1>
     <div>
-        <img src="one-dice.png" class="imgs" id="dice"/>
+        <img src="one-dice.png" class="imgs" id="dice" />
         <button class="btn" onclick="roll()">Dice Roll</button>
     </div>
 
     <script>
         const diceElement = document.getElementById("dice");
-        function roll() {
+        function diceRollFace() {
             const min = 1;
             const max = 6;
-            
-            const random = Math.floor(Math.random (max - min + 1) + min);
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function roll() {
+            const diceFace = diceRollFace();
+            if (diceFace == 1) {
+                dice.src = "one-dice.png";
+            } else if (diceFace == 2) {
+                dice.src = "two-dice.png";
+            } else if (diceFace == 3) {
+                dice.src = "three-dice.png";
+            } else if (diceFace == 4) {
+                dice.src = "four-dice.png";
+            } else if (diceFace == 5) {
+                dice.src = "five-dice.png";
+            } else if (diceFace == 6) {
+                dice.src = "six-dice.png";
+            }
         }
     </script>
 </body>
+
 </html>
